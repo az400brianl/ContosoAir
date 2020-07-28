@@ -7,9 +7,6 @@ steps:
     inputs:
       command: 'custom'
       customcommand: 'install --production'
-  - script: 'npm test'
-    displayName: 'Run unit tests'
-    continueOnError: true
   - task: PublishCodeCoverageResults@1
     displayName: 'Publish Code Coverage'
     condition: 'in(variables[''Agent.JobStatus''], ''Succeeded'')'
